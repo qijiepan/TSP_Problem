@@ -156,14 +156,13 @@ if __name__ == '__main__':
     cities = []
 
     # open the file
-    with open('tour17.csv', 'r') as f:
+    with open('gr666.tsp', 'r') as f:
         for line in f:
-            CityList = line.split('\r')  # use \r to split each city
-            for c in CityList:
-                cityInfo = c.split(';')  # use ; to split the name, x and y
+            if line[0] == '0':
+                cityInfo = line.split(' ')  # use ; to split the name, x and y
                 city = City(cityInfo[0], cityInfo[1], cityInfo[2])
                 cities.append(city)
-
+                
     EuSolution = Greedy(cities)
 
     print "*** This is the Greedy Solution with the Eucilidean Distance ***"
@@ -184,11 +183,10 @@ if __name__ == '__main__':
     cities = []
 
     # open the file
-    with open('tour17.csv', 'r') as f:
+    with open('gr666.tsp', 'r') as f:
         for line in f:
-            CityList = line.split('\r')  # use \r to split each city
-            for c in CityList:
-                cityInfo = c.split(';')  # use ; to split the name, x and y
+            if line[0] == '0':
+                cityInfo = line.split(' ')  # use ; to split the name, x and y
                 city = City(cityInfo[0], cityInfo[1], cityInfo[2])
                 cities.append(city)
 

@@ -77,7 +77,7 @@ class TwoOpt(object):
         """
 
         while self.improvement:
-            self.improvement = False
+            #self.improvement = False
             for i in xrange(1, len(self.existPath) - 2):
                 for k in xrange(i + 2, len(self.existPath)):
                     newPath = self.twoOptSwap(self.existPath, i, k)
@@ -85,7 +85,7 @@ class TwoOpt(object):
                     if newDistance < self.existDistance:
                         self.existDistance = newDistance
                         self.existPath = newPath
-                        self.improvement = True
+                        self.improvement = False
 
         return self.existPath, self.existDistance
 
@@ -97,11 +97,10 @@ if __name__ == '__main__':
     cities = []
 
     # open the file
-    with open('tour17.csv', 'r') as f:
+    with open('gr666.tsp', 'r') as f:
         for line in f:
-            CityList = line.split('\r')  # use \r to split each city
-            for c in CityList:
-                cityInfo = c.split(';')  # use ; to split the name, x and y
+            if line[0] == '0':
+                cityInfo = line.split(' ')  # use ; to split the name, x and y
                 city = City(cityInfo[0], cityInfo[1], cityInfo[2])
                 cities.append(city)
 

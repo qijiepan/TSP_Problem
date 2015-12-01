@@ -30,7 +30,7 @@ class City(object):
         self.visited = visited
 
 
-# Now let's we implement the greedy algorithm.
+# Now let's implement the greedy algorithm.
 # The thought of the greedy is at first we need to randomly pick a initial city, after that, go
 # through all the cities which have not been visited and find the minimun distance. And then use
 # the city we found as the start city, do the same process, until we go
@@ -159,7 +159,7 @@ if __name__ == '__main__':
     with open('gr666.tsp', 'r') as f:
         for line in f:
             if line[0] == '0':
-                cityInfo = line.split(' ')  # use ; to split the name, x and y
+                cityInfo = line.split(' ')  # use " "to split the name, x and y
                 city = City(cityInfo[0], cityInfo[1], cityInfo[2])
                 cities.append(city)
                 
@@ -186,7 +186,7 @@ if __name__ == '__main__':
     with open('gr666.tsp', 'r') as f:
         for line in f:
             if line[0] == '0':
-                cityInfo = line.split(' ')  # use ; to split the name, x and y
+                cityInfo = line.split(' ')  # use " " to split the name, x and y
                 city = City(cityInfo[0], cityInfo[1], cityInfo[2])
                 cities.append(city)
 
